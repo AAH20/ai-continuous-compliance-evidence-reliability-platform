@@ -1,0 +1,11 @@
+{
+  "allowed_bad_minutes": 648.0,
+  "availability_percent": 98.72,
+  "burn_rate": 2.844444,
+  "consumed_bad_minutes": 1658.88,
+  "met": false,
+  "objective_percent": 99.5,
+  "receipt_sha256": "9f18cebaf5719346c7315f021a1c060a92d5d16cfaf1fde155f9412ad5de3046",
+  "remaining_error_budget_minutes": 0,
+  "state": "burning"
+}

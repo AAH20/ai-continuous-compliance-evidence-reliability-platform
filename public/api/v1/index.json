@@ -1,0 +1,12 @@
+{
+  "artifacts": [
+    "evidence-qualified.json",
+    "population.json",
+    "control-slo.json",
+    "economics.json",
+    "frameworks.json",
+    "failure-scenarios.json"
+  ],
+  "evidence_level": "SYNTHETIC_REFERENCE",
+  "release": "0.1.0"
+}

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "controlsre"
+version = "0.1.0"
+description = "Control reliability engineering for continuous compliance evidence, SLOs, audit readiness, and finance-safe revenue assurance."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Ahmed Hassan" }]
+keywords = ["continuous compliance", "GRC automation", "evidence reliability", "control monitoring", "AI governance", "audit readiness"]
+
+[project.scripts]
+controlsre = "controlsre.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["controlsre*"]

@@ -1,0 +1,38 @@
+{
+  "artifact_id": "ev-aws-iam-001",
+  "calculated_payload_sha256": "60fa4c9941728d9a9c32f05050cc46520d99e4407f690bef8624072174273913",
+  "gates": [
+    {
+      "gate": "provenance",
+      "reason": "source, resource and collector are identified",
+      "status": "PASS"
+    },
+    {
+      "gate": "integrity",
+      "reason": "payload digest matches the retained receipt",
+      "status": "PASS"
+    },
+    {
+      "gate": "scope",
+      "reason": "all expected resources are observed",
+      "status": "PASS"
+    },
+    {
+      "gate": "freshness",
+      "reason": "artifact is current at evaluation time",
+      "status": "PASS"
+    },
+    {
+      "gate": "relevance",
+      "reason": "artifact supports every evaluated control",
+      "status": "PASS"
+    },
+    {
+      "gate": "temporal_validity",
+      "reason": "collection and evaluation fall inside validity and audit windows",
+      "status": "PASS"
+    }
+  ],
+  "qualified": true,
+  "receipt_sha256": "a0123b6d15b71fbc55a822c1c4dcb4bf50d316eb4db411bebcfe1b4e00c6d354"
+}

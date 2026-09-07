@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: ControlSRE API
+  version: 0.1.0
+  description: Tool-neutral contracts for evidence qualification, control SLOs, population reconciliation, framework imports, evolution cases, and finance-safe economics.
+servers:
+  - url: http://127.0.0.1:8788
+paths:
+  /health:
+    get:
+      operationId: health
+      responses:
+        '200': { description: Service health }
+  /v1/evidence/qualify:
+    post:
+      operationId: qualifyEvidence
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [evidence, as_of], properties: { evidence: { type: object }, as_of: { type: string, format: date-time }, max_age_hours: { type: integer, minimum: 1 } } } } } }
+      responses: { '200': { description: Qualification decision }, '422': { description: Invalid request } }
+  /v1/populations/reconcile:
+    post:
+      operationId: reconcilePopulation
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [expected, observed], properties: { expected: { type: array, items: { type: string } }, observed: { type: array, items: { type: string } } } } } } }
+      responses: { '200': { description: Population reconciliation } }
+  /v1/control-slos:
+    post:
+      operationId: calculateControlSlo
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [required_minutes, valid_minutes, objective_percent], properties: { required_minutes: { type: number }, valid_minutes: { type: number }, objective_percent: { type: number }, elapsed_fraction: { type: number } } } } } }
+      responses: { '200': { description: SLO and error-budget result } }
+  /v1/economics:
+    post:
+      operationId: calculateEconomics
+      requestBody: { required: true, content: { application/json: { schema: { type: object } } } }
+      responses: { '200': { description: Finance-safe economics } }
+  /v1/evolution/regression-cases:
+    post:
+      operationId: buildRegressionCase
+      requestBody: { required: true, content: { application/json: { schema: { type: object } } } }
+      responses: { '200': { description: Sanitized regression case } }
+  /v1/frameworks/import:
+    post:
+      operationId: importFrameworkCatalog
+      requestBody: { required: true, content: { application/json: { schema: { type: object } } } }
+      responses: { '200': { description: Framework catalog import receipt } }

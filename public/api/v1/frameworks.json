@@ -1,0 +1,10 @@
+{
+  "framework_count": 4,
+  "framework_urns": [
+    "urn:controlsre:framework:iso27001:2022",
+    "urn:controlsre:framework:iso42001:2023",
+    "urn:controlsre:framework:nist-csf:2.0",
+    "urn:controlsre:framework:soc2:2022"
+  ],
+  "integration_contract": "ciso-assistant-compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_id": "ev-aws-iam-001",
+  "source": "aws-config",
+  "resource": "arn:aws:organizations::111111111111:organization/o-reference",
+  "collector": "controlsre-aws@0.1.0",
+  "collected_at": "2026-09-07T08:00:00Z",
+  "valid_from": "2026-09-07T00:00:00Z",
+  "valid_until": "2026-09-08T00:00:00Z",
+  "audit_period_start": "2026-07-01T00:00:00Z",
+  "audit_period_end": "2026-09-30T23:59:59Z",
+  "expected_scope": ["production", "payments"],
+  "observed_scope": ["production", "payments", "security"],
+  "target_control_ids": ["IAM-04"],
+  "control_ids": ["IAM-04", "SOC2-CC6.1", "ISO-A.5.15"],
+  "payload": {"accounts_evaluated": 12, "root_mfa": true, "stale_keys": 0},
+  "payload_sha256": "60fa4c9941728d9a9c32f05050cc46520d99e4407f690bef8624072174273913"
+}

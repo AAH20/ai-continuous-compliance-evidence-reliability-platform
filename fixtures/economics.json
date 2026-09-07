@@ -1,0 +1,16 @@
+{
+  "collector_cost": 7200,
+  "storage_cost": 1800,
+  "orchestration_cost": 3200,
+  "model_cost": 4100,
+  "review_cost": 11200,
+  "rework_cost": 900,
+  "implementation_cost": 48000,
+  "qualified_evidence": 7395,
+  "avoided_labor": 126000,
+  "avoided_audit_rework": 104000,
+  "expected_loss_reduction": 42000,
+  "finance_approved_attributable_margin": 0,
+  "confirmed_contract_value": 420000,
+  "modeled_pipeline_influenced": 210000
+}

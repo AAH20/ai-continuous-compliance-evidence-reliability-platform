@@ -1,0 +1,12 @@
+{
+  "confirmed_contract_value_context_only": 420000,
+  "cost_per_qualified_evidence": 3.84,
+  "finance_approved_attributable_margin": 0,
+  "modeled_pipeline_influenced_context_only": 210000,
+  "net_verified_value": 195600,
+  "operating_cost": 28400,
+  "receipt_sha256": "ccedec9190e94d3c85952f7a814b11d305b1e987d5d409773d5b39dc4ef2644c",
+  "roi": 2.5602,
+  "total_cost": 76400,
+  "verified_benefit": 272000
+}

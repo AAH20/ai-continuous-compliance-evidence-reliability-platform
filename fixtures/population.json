@@ -1,0 +1,4 @@
+{
+  "expected": ["aws-prod", "aws-security", "k8s-us-east-1", "k8s-us-east-2", "cicd-main"],
+  "observed": ["aws-prod", "aws-security", "k8s-us-east-1", "cicd-main"]
+}

@@ -1,0 +1,17 @@
+name: ControlSRE assurance gate
+description: Fail a build when evidence population, qualification, or control SLO release gates are not met.
+inputs:
+  command:
+    description: ControlSRE CLI command and arguments
+    required: true
+    default: coverage fixtures/population.json
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: python -m pip install "${{ github.action_path }}"
+    - shell: bash
+      run: controlsre ${{ inputs.command }}
+branding:
+  icon: shield
+  color: blue

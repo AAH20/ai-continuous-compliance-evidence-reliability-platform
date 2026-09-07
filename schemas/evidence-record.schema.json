@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://a2zsoc.com/schemas/controlsre/evidence-record.schema.json",
+  "title": "ControlSRE evidence record",
+  "type": "object",
+  "required": ["artifact_id", "source", "resource", "collector", "collected_at", "valid_from", "valid_until", "audit_period_start", "audit_period_end", "expected_scope", "observed_scope", "target_control_ids", "control_ids", "payload", "payload_sha256"],
+  "properties": {
+    "artifact_id": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "minLength": 1},
+    "resource": {"type": "string", "minLength": 1},
+    "collector": {"type": "string", "minLength": 1},
+    "collected_at": {"type": "string", "format": "date-time"},
+    "valid_from": {"type": "string", "format": "date-time"},
+    "valid_until": {"type": "string", "format": "date-time"},
+    "audit_period_start": {"type": "string", "format": "date-time"},
+    "audit_period_end": {"type": "string", "format": "date-time"},
+    "expected_scope": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "observed_scope": {"type": "array", "items": {"type": "string"}},
+    "target_control_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "control_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "payload": {},
+    "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

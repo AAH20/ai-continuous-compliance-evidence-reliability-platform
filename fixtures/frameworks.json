@@ -1,0 +1,8 @@
+{
+  "frameworks": [
+    {"urn": "urn:controlsre:framework:soc2:2022", "name": "SOC 2 reference profile"},
+    {"urn": "urn:controlsre:framework:iso27001:2022", "name": "ISO/IEC 27001:2022 reference profile"},
+    {"urn": "urn:controlsre:framework:iso42001:2023", "name": "ISO/IEC 42001:2023 reference profile"},
+    {"urn": "urn:controlsre:framework:nist-csf:2.0", "name": "NIST CSF 2.0 reference profile"}
+  ]
+}

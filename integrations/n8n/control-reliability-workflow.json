@@ -1,0 +1,14 @@
+{
+  "name": "ControlSRE evidence qualification and incident gate",
+  "nodes": [
+    {"id":"webhook","name":"Evidence received","type":"n8n-nodes-base.webhook","typeVersion":2,"position":[0,0],"parameters":{"httpMethod":"POST","path":"controlsre-evidence"}},
+    {"id":"qualify","name":"Qualify evidence","type":"n8n-nodes-base.httpRequest","typeVersion":4.2,"position":[260,0],"parameters":{"method":"POST","url":"={{$env.CONTROLSRE_URL}}/v1/evidence/qualify","sendBody":true,"contentType":"raw","rawContentType":"application/json","body":"={{ JSON.stringify({ evidence: $json, as_of: $now.toISO() }) }}"}},
+    {"id":"gate","name":"Qualified?","type":"n8n-nodes-base.if","typeVersion":2.2,"position":[520,0],"parameters":{"conditions":{"options":{"caseSensitive":true,"typeValidation":"strict"},"conditions":[{"leftValue":"={{$json.qualified}}","rightValue":true,"operator":{"type":"boolean","operation":"true","singleValue":true}}]}}},
+    {"id":"receipt","name":"Return receipt","type":"n8n-nodes-base.respondToWebhook","typeVersion":1.4,"position":[780,-100],"parameters":{"respondWith":"json","responseBody":"={{$json}}"}},
+    {"id":"incident","name":"Create reliability incident","type":"n8n-nodes-base.respondToWebhook","typeVersion":1.4,"position":[780,110],"parameters":{"respondWith":"json","responseBody":"={{ { status: 'blocked', qualification: $json } }}","options":{"responseCode":422}}}
+  ],
+  "connections":{"Evidence received":{"main":[[{"node":"Qualify evidence","type":"main","index":0}]]},"Qualify evidence":{"main":[[{"node":"Qualified?","type":"main","index":0}]]},"Qualified?":{"main":[[{"node":"Return receipt","type":"main","index":0}],[{"node":"Create reliability incident","type":"main","index":0}]]}},
+  "active": false,
+  "settings": {"executionOrder":"v1"},
+  "meta": {"templateCredsSetupCompleted": false, "evidence_level":"REFERENCE_WORKFLOW"}
+}

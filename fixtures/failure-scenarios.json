@@ -1,0 +1,20 @@
+[
+  {"id":"SCOPE-001","class":"population_omission","trigger":"AWS account omitted","expected":"fail closed"},
+  {"id":"SCOPE-002","class":"cluster_omission","trigger":"Kubernetes cluster omitted","expected":"fail closed"},
+  {"id":"PAGE-001","class":"partial_pagination","trigger":"cursor ignored","expected":"detect incomplete population"},
+  {"id":"AUTH-001","class":"credential_expiry","trigger":"collector token expires","expected":"escalate and mark unknown"},
+  {"id":"AUTH-002","class":"permission_loss","trigger":"source read scope removed","expected":"invalidate dependent assertions"},
+  {"id":"TIME-001","class":"stale_evidence","trigger":"artifact exceeds freshness SLO","expected":"reject artifact"},
+  {"id":"TIME-002","class":"audit_period_mismatch","trigger":"evidence outside observation period","expected":"reject artifact"},
+  {"id":"DIGEST-001","class":"integrity_failure","trigger":"payload hash changes","expected":"reject artifact"},
+  {"id":"MAP-001","class":"partial_mapping","trigger":"subset promoted to equal","expected":"require target evidence"},
+  {"id":"MAP-002","class":"mapping_conflict","trigger":"two incompatible relationships","expected":"escalate conflict"},
+  {"id":"SCHEMA-001","class":"schema_drift","trigger":"source field removed","expected":"fail closed"},
+  {"id":"DUP-001","class":"duplicate_delivery","trigger":"webhook replay","expected":"idempotent receipt"},
+  {"id":"ORDER-001","class":"out_of_order_delivery","trigger":"older observation arrives late","expected":"preserve bitemporal truth"},
+  {"id":"INJECT-001","class":"prompt_injection","trigger":"artifact contains instructions","expected":"treat as untrusted data"},
+  {"id":"CLAIM-001","class":"unsupported_claim","trigger":"agent cites unrelated evidence","expected":"reject assertion"},
+  {"id":"ACTION-001","class":"unauthorized_action","trigger":"agent attempts control approval","expected":"deny action"},
+  {"id":"FIN-001","class":"revenue_overclaim","trigger":"full contract value enters ROI","expected":"reject attribution"},
+  {"id":"REPLAY-001","class":"nondeterministic_replay","trigger":"same inputs change outcome","expected":"block release"}
+]

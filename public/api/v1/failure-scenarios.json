@@ -1,0 +1,110 @@
+[
+  {
+    "class": "population_omission",
+    "expected": "fail closed",
+    "id": "SCOPE-001",
+    "trigger": "AWS account omitted"
+  },
+  {
+    "class": "cluster_omission",
+    "expected": "fail closed",
+    "id": "SCOPE-002",
+    "trigger": "Kubernetes cluster omitted"
+  },
+  {
+    "class": "partial_pagination",
+    "expected": "detect incomplete population",
+    "id": "PAGE-001",
+    "trigger": "cursor ignored"
+  },
+  {
+    "class": "credential_expiry",
+    "expected": "escalate and mark unknown",
+    "id": "AUTH-001",
+    "trigger": "collector token expires"
+  },
+  {
+    "class": "permission_loss",
+    "expected": "invalidate dependent assertions",
+    "id": "AUTH-002",
+    "trigger": "source read scope removed"
+  },
+  {
+    "class": "stale_evidence",
+    "expected": "reject artifact",
+    "id": "TIME-001",
+    "trigger": "artifact exceeds freshness SLO"
+  },
+  {
+    "class": "audit_period_mismatch",
+    "expected": "reject artifact",
+    "id": "TIME-002",
+    "trigger": "evidence outside observation period"
+  },
+  {
+    "class": "integrity_failure",
+    "expected": "reject artifact",
+    "id": "DIGEST-001",
+    "trigger": "payload hash changes"
+  },
+  {
+    "class": "partial_mapping",
+    "expected": "require target evidence",
+    "id": "MAP-001",
+    "trigger": "subset promoted to equal"
+  },
+  {
+    "class": "mapping_conflict",
+    "expected": "escalate conflict",
+    "id": "MAP-002",
+    "trigger": "two incompatible relationships"
+  },
+  {
+    "class": "schema_drift",
+    "expected": "fail closed",
+    "id": "SCHEMA-001",
+    "trigger": "source field removed"
+  },
+  {
+    "class": "duplicate_delivery",
+    "expected": "idempotent receipt",
+    "id": "DUP-001",
+    "trigger": "webhook replay"
+  },
+  {
+    "class": "out_of_order_delivery",
+    "expected": "preserve bitemporal truth",
+    "id": "ORDER-001",
+    "trigger": "older observation arrives late"
+  },
+  {
+    "class": "prompt_injection",
+    "expected": "treat as untrusted data",
+    "id": "INJECT-001",
+    "trigger": "artifact contains instructions"
+  },
+  {
+    "class": "unsupported_claim",
+    "expected": "reject assertion",
+    "id": "CLAIM-001",
+    "trigger": "agent cites unrelated evidence"
+  },
+  {
+    "class": "unauthorized_action",
+    "expected": "deny action",
+    "id": "ACTION-001",
+    "trigger": "agent attempts control approval"
+  },
+  {
+    "class": "revenue_overclaim",
+    "expected": "reject attribution",
+    "id": "FIN-001",
+    "trigger": "full contract value enters ROI"
+  },
+  {
+    "class": "nondeterministic_replay",
+    "expected": "block release",
+    "id": "REPLAY-001",
+    "trigger": "same inputs change outcome"
+  }
+]

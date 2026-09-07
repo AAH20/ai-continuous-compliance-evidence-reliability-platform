@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22', cache: npm }
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/generate_public_artifacts.py
+      - run: git diff --exit-code -- public/api/v1
+      - run: npm ci
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run build
