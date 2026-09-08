@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Evidence](https://img.shields.io/badge/results-synthetic_reference-5ee7f2.svg)](docs/METHODOLOGY.md)
 
+**Live product:** [controlsre.a2zsoc.com](https://controlsre.a2zsoc.com)
+
 Open-source **continuous compliance**, **GRC automation**, **audit evidence collection**, **control monitoring**, **AI governance**, **cloud security compliance**, **Kubernetes compliance**, **cyber risk quantification**, and **revenue assurance**—engineered with SRE-style service-level objectives and error budgets.
 
 ControlSRE answers the question that collection dashboards cannot answer alone:

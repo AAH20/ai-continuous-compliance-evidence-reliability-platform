@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <header className="topbar">
-        <div className="brand-mark"><ShieldCheck size={20} /><span>ControlSRE</span></div>
+        <div className="brand-mark"><ShieldCheck size={20} /><span><small>A2Z SOC / EVIDENCE RELIABILITY</small><b>ControlSRE</b></span></div>
         <div className="topbar-copy"><b>Reliability command</b><span>Production · 90-day audit window</span></div>
         <div className="ml-auto flex items-center gap-3"><Badge variant="outline">Synthetic reference</Badge><Badge className="live-badge"><Activity size={12} /> Live</Badge><Button variant="outline" size="sm" onClick={downloadPack}><Download /> Export assurance pack</Button></div>
       </header>
@@ -106,7 +106,7 @@ export default function Home() {
                 <div className="impact-chain"><span>1 source gap</span><ArrowUpRight /><span>4 control assertions</span><ArrowUpRight /><span>2 assurance requests</span></div>
                 <div className="impact-values"><div><small>Confirmed value exposed</small><strong>$420K</strong></div><div><small>Finance-attributable margin</small><strong>$0</strong></div></div>
                 <p className="guardrail"><ShieldCheck size={15} />Contract value is context, not ROI, until Finance approves attribution.</p>
-                <Dialog><DialogTrigger render={<Button className="w-full" />}>Open incident evidence</DialogTrigger><DialogContent className="border-white/10 bg-[#0c131d] text-slate-100"><DialogHeader><DialogTitle>INC-LOG-02 · Scope degradation</DialogTitle><DialogDescription>Detected by expected-versus-observed population reconciliation.</DialogDescription></DialogHeader><div className="dialog-grid"><span>Affected source</span><b>k8s-us-east-2</b><span>Trigger</span><b>Collector authorization loss</b><span>Fail-closed action</span><b>4 assertions marked unknown</b><span>Required recovery</span><b>Restore permission, recollect, replay</b></div></DialogContent></Dialog>
+                <Dialog><DialogTrigger render={<Button className="w-full" />}>Open incident evidence</DialogTrigger><DialogContent className="border-white/10 bg-[#111827] text-slate-100"><DialogHeader><DialogTitle>INC-LOG-02 · Scope degradation</DialogTitle><DialogDescription>Detected by expected-versus-observed population reconciliation.</DialogDescription></DialogHeader><div className="dialog-grid"><span>Affected source</span><b>k8s-us-east-2</b><span>Trigger</span><b>Collector authorization loss</b><span>Fail-closed action</span><b>4 assertions marked unknown</b><span>Required recovery</span><b>Restore permission, recollect, replay</b></div></DialogContent></Dialog>
               </aside>
             </div>
           </TabsContent>

@@ -13,9 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://controlsre.a2zsoc.com'),
   title: 'ControlSRE — AI Continuous Compliance & Evidence Reliability',
   description:
     'Control reliability engineering for continuous compliance evidence, framework assurance, audit readiness, and finance-safe revenue enablement.',
+  alternates: { canonical: '/' },
 };
 
 export default function RootLayout({
